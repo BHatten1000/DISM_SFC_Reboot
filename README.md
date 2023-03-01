@@ -12,6 +12,10 @@ The script that was used to combine the two troubleshooting tools: <br/>
 <h2>Description</h2>
 This script will run the System File Checker (sfc) and then wait until the process is completely done using the "tasklist" command. After that, it will run the Deployment Image Servicing and Management (DISM) tool with the "restore health" option and wait until the process is completely done, then reboot the system. The "@echo off" command at the top of the script will prevent the commands from being displayed in the command prompt as they are executed.
 Please note that the system will reboot after DISM process is finished, so make sure to save any unsaved work before running it.
+
+DISM.exe /Online /Cleanup-Image /Restorehealth” is a Dism command that runs a scan for corruption and repairs problems that it finds with the operating system you are logged into.
+
+The sfc /scannow command will scan all protected system files, and replace corrupted files with a cached copy that is located in a compressed folder at %WinDir%\System32\dllcache.
 <br />
 
 
